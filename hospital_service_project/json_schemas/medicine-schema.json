@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "medicineCode": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Code representing the medicine being prescribed."
+    },
+    "amount": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The quantity of medicine prescribed, must be a positive number."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "The date the medicine was prescribed (in MM/DD/YYYY format)."
+    },
+    "doctorId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "The UUID of the doctor prescribing the medicine."
+    }
+  },
+  "required": ["medicineCode", "amount", "date", "doctorId"],
+  "additionalProperties": false
+}
